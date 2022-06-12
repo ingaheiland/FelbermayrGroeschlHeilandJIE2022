@@ -1,0 +1,996 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{graphicx,graphics}
+\usepackage{amsmath,amsthm}
+%\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{type1cm}
+\usepackage{booktabs,setspace}
+\usepackage{todo}
+%\usepackage[ngerman]{babel}
+\usepackage{comment}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{color}
+\usepackage[detect-all]{siunitx}
+\usepackage[hang,flushmargin]{footmisc}
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[font=large]{caption}
+
+\sisetup{
+        detect-mode,
+        tight-spacing           = true,
+        group-digits            = false,
+        input-symbols           = {()},
+        table-space-text-post   = ***,
+        explicit-sign
+				}
+				
+	\graphicspath{{Images/}}
+
+% !TEX encoding = UTF-8 Unicode
+
+\pagestyle{plain}
+
+
+
+\setcounter{MaxMatrixCols}{10}
+
+
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\renewcommand{\theabstract}{\normalsize}
+\newcommand{\fignote}[2]{\begin{center}\parbox[c]{#1}{\footnotesize #2} \end{center}}
+\newcommand{\tabnote}[2]{\begin{center}\parbox[c]{#1}{\footnotesize #2} \end{center}}
+\addtolength{\skip\footins}{4mm}
+\setlength{\footnotesep}{10pt}
+\setlength{\oddsidemargin}{0.3cm}
+\setlength{\topmargin}{-0.75cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{23.5cm}\parskip5pt
+
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+\newcounter{subtab}
+\renewcommand*\thesubtab{\alph{subtab}}
+\let\thetableold\thetable
+
+\setlength{\parindent}{0pt}
+
+%\doublespacing
+
+\begin{document}
+
+
+\begin{titlepage}
+ \begin{center}
+\textcolor{white}{-}
+%\vspace{1cm}
+
+\Huge{\textbf{Complex Europe:}\\ \textbf{Quantifying the Cost of Disintegration\\ Tables \& Figures}}\\[1.5cm]
+
+
+
+
+\large{Gabriel Felbermayr\footnote{Austrian Institute for Economic Research, Vienna University of Economics and Business, CESifo \& GEP, Arsenal Objekt 20, 1030 Wien, Austria; felbermayr@wifo.ac.at}, Jasmin Gr\"oschl\footnote{ifo Institute, University of Munich \& CESifo, Poschingerstr. 5, 81679 Munich, Germany; groeschl@ifo.de}, and Inga Heiland\footnote{IfW \& CAU Kiel, University of Oslo, CESifo, CEPR, ifo Institute. Kiellinie 66, 24105 Kiel; inga.heiland@ifw-kiel.de}}\\
+
+\bigskip
+
+
+
+\large {\today}
+
+\renewcommand{\baselinestretch}{1.0}
+
+
+
+\end{center}
+ \end{titlepage}
+
+\newpage
+\setcounter{page}{1}
+\begin{figure}[htb!]
+\caption{Europe: Overlapping Integration Agreements}
+\vspace{0.25cm}
+\label{fig:schengenmap}
+\centering
+%\includegraphics[width=0.75\textwidth]{images/schengen-status.pdf}
+%\includegraphics[width=0.75\textwidth]{images/fig1.eps}
+\medskip
+%\\
+\footnotesize{\textbf{Note}: The Euro icons mark whether a country is a member of the Eurozone. Data as of December 2020.}
+\end{figure}
+
+
+
+
+\renewcommand{\tabcolsep}{.16cm}
+\begin{table}[t!]
+\caption{EU Integration Steps and Bilateral Imports (2000 - 2014)}
+\label{table_sector}\centering \vspace*{0.5cm}
+{\scriptsize
+\hspace*{-0cm}\begin{tabular}{lcccccccc}
+Dep. var.: Bilateral imports\\
+\midrule
+Sector description & Sector & Single Market & Euro & Schengen & EU-KOR PTA & EU PTAs & Other RTAs \\
+\midrule
+\input{tables/coef_final_adj}
+\midrule
+\multicolumn{8}{l}{\parbox[t]{6.3in}{Coefficient averages from 1000 bootstraps of the sectoral gravity equation, estimated under the constraint that $1/\theta \geq 0$ with a Poisson Pseudo Maximum Likelihood (PPML) estimator.  ***, **, * denote significance at the 1\%, 5\%, 10\% level, respectively, according to the bootstrapped distribution of the coefficients. We bootstrap clusters (country pairs) rather than observations to account for correlation of errors within pairs. }}
+\end{tabular}}
+\end{table}
+
+
+\begin{figure}[t!]
+\centering
+\caption{Averages Sectoral EU MFN-Tariffs}
+\vspace{0.25cm}
+\label{fig:ntb_tariffsEU}
+%\includegraphics[width=0.67\textwidth]{images/tariffsEU.pdf}
+\includegraphics[width=0.67\textwidth]{images/fig2.eps}
+\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: Trade-weighted averages of sectoral bilateral tariffs of the product-level MFN tariffs imposed by the EU in 2014.}}\end{fignote}
+\end{figure}
+
+
+\renewcommand{\tabcolsep}{.3cm}
+
+\begin{figure}[!htp]
+\centering
+\caption{Effects of Disintegration on Trade Costs}
+\vspace{0.25cm}
+\label{fig:ntb}
+\textbf{S2:} Dissolution of the European Single Market\\
+%\includegraphics[width=0.65\textwidth]{images/ntb_Smarket_bt.pdf}\\
+\includegraphics[width=0.65\textwidth]{images/fig3_1.eps}\\
+\textbf{S3:} Dissolution of the Euro Zone\\
+%\includegraphics[width=0.65\textwidth]{images/ntb_Euro_bt.pdf}\\
+\includegraphics[width=0.65\textwidth]{images/fig3_2.eps}\\
+\textbf{S4:} Dissolution of the Schengen Zone\\
+%\includegraphics[width=0.65\textwidth]{images/ntb_schengen_bt.pdf}\\
+\includegraphics[width=0.65\textwidth]{images/fig3_3.eps}\\
+\textbf{S5:} Dissolution of the EU's RTAs\\
+%\includegraphics[width=0.65\textwidth]{images/ntb_oRTA_bt.pdf}\\
+\includegraphics[width=0.65\textwidth]{images/fig3_4.eps}\\
+\textbf{S6:} Complete dismantling of EU\\
+%\includegraphics[width=0.65\textwidth]{images/ntb_allEU_bt.pdf}
+\includegraphics[width=0.65\textwidth]{images/fig3_5.eps}
+\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: Figures show the average increase in trade costs (as valorem tariff equivalents) by sector that would result from undoing the different integration steps. The estimates are based on the gravity estimates of policy measures and trade elasticities reported in Tables \ref{table_sector} and \ref{table_dispersion}. Bootstrapped 90\% confidence intervals.}}
+\end{fignote}
+\end{figure}%
+
+
+\begin{figure}[!htp]
+\centering
+\caption{Relative Wage Adjustments in Full Collapse Scenario}
+\label{fig:wage_allEU}
+%\includegraphics[width=\textwidth]{images/wage_allEU.pdf}\\
+\includegraphics[width=\textwidth]{images/fig4.eps}\\
+\vspace{-.5cm}\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: The figure shows wage changes relative to the U.S. Grey bars indicate bootstrapped 90\% confidence intervals.}}
+\end{fignote}
+\end{figure}
+
+
+\begin{table}[t!]\vspace*{-0cm}
+	\caption{Changes in Aggregate Output, Gross Trade Flows and VAX-Ratios}\label{table_aggexpvax}
+	\vspace{0.25cm}
+\centering
+\resizebox{.99\textwidth}{!}{\footnotesize
+\begin{tabular}{lcccccccc}
+\toprule
+\quad &\multicolumn{2}{c}{\bf Output} & \multicolumn{6}{c}{\bf Exports to}\\ 
+\quad &\multicolumn{2}{c}{}&\multicolumn{2}{c}{old EU} & \multicolumn{2}{c}{new EU} & \multicolumn{2}{c}{non-EU}\\\cmidrule(rl){2-3}\cmidrule(rl){4-9}
+ &gross& VA/Output &gross& VAX &gross& VAX &gross& VAX \\
+ & (in \%)& (in pp) & (in \%)& (in pp) & (in \%)& (in pp) & (in \%)& (in pp) \\
+\midrule
+ &(1)& (2) &(3)& (4) & (5) & (6) & (7)& (8) \\
+\midrule\\[-.75EM]
+\multicolumn{9}{l}{\textit{\textbf{S1 Customs Union (MFN tariffs)}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpCunion.tex}\\[-.75EM]
+\multicolumn{9}{l}{\textit{\textbf{S2 Single Market}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpSmarket.tex}\\[-.75EM]
+\multicolumn{9}{l}{\textbf{\textit{S3 Euro}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpEuro.tex}\\[-.75EM]
+\multicolumn{9}{l}{\textit{\textbf{S4 Schengen}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpSchengen.tex}\\[-.75EM]
+\multicolumn{9}{l}{\textit{\textbf{S5 RTAs}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpoRTA.tex}\\[-.75EM]
+\multicolumn{9}{l}{\textit{\textbf{S6 All}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpallEU.tex}\\[-.75EM]
+\multicolumn{9}{l}{\textit{\textbf{S7 All w Transfers}}}\\[-.4EM]
+\midrule
+\input{tables/aggexpallEUtransfer.tex}\\[-.75EM]
+\bottomrule
+\multicolumn{9}{l}{\parbox[t]{7in}{\scriptsize{\textbf{Note}:  $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications. Results on domestic sales and total exports can be found in Table \ref{apxtable_aggexpvax} in the Online Appendix. VAX means domestic value added content of exports. New EU members are the 13 mostly Eastern European countries who joined after 2003.}}}
+\end{tabular}
+}
+\end{table}
+
+
+\renewcommand{\tabcolsep}{.35cm}
+\begin{table}[!tp]\vspace*{-0cm}
+ \centering
+	\caption{Changes in Sectoral Trade Flows and VAX-Ratios, Full Collapse (S6)}\label{table_secbilvax}
+	\vspace{0.25cm}
+{\scriptsize
+\begin{tabular}{lccccccc}
+\toprule
+\multicolumn{2}{l}{Exports to:} & \multicolumn{2}{c}{EU}& \multicolumn{2}{c}{non-EU}& \multicolumn{2}{c}{World}\\\cmidrule(rl){3-4}\cmidrule(rl){5-6}\cmidrule(rl){7-8}
+ \textit{\textbf{}} &   &  gross & VAX & gross  & VAX & gross  & VAX   \\
+\quad Region & Sector & (in\%)&(in pp)& (in\%)&(in pp)& (in\%)&(in pp)\\
+%\midrule\\[-.45EM]
+%\multicolumn{8}{l}{\textit{\textbf{S6 All}}}\\
+\midrule
+\input{tables/aggsecexpallEU.tex}
+\bottomrule
+\multicolumn{8}{l}{\parbox[t]{5.6in}{\tiny{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications. Results for all scenarios can be found in Table \ref{apxtable_secbilvax} in the Online Appendix.}}}
+\end{tabular}
+}
+\end{table}
+
+
+
+\begin{table}[!h]\vspace*{-0cm}
+\centering
+	\caption{Changes in Sectoral Value Added and Shares in Total Value Added}\label{table_outputs}
+	\vspace{0.25cm}
+\resizebox{.99\textwidth}{!}{
+\begin{tabular}{lccccccccc}
+\toprule
+\multicolumn{2}{l}{Scenario:} & & Customs&  Single & Euro & Schengen & Other& All & All \\
+Region & Sector & Baseline& Union &Market & & & RTAs & & w\ Transfers\\
+\midrule
+&&& (S1) & (S2)& (S3)& (S4)& (S5)& (S6)& (S7)\\
+\midrule\\[-.45EM]
+&&Value added&&&&&&&\\
+&&(in bn. USD) & \multicolumn{7}{c}{Value added change (in \%)}\\
+\midrule%\\[.25EM]
+\input{tables/outputp_s.tex}\\[-.0EM]
+&& VA share&&&&&&&\\
+&& (in \%) &\multicolumn{7}{c}{Change in value added share (in pp)}\\
+\midrule
+\input{tables/output_s}\\[-.5EM]
+\bottomrule
+\multicolumn{10}{l}{\parbox[t]{8in}{\footnotesize{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications.}}}
+\end{tabular}
+}
+\end{table}
+
+
+
+\begin{figure}[t!]
+\centering
+\caption{Change in Real Consumption in \% for Various Scenarios}
+\vspace{0.25cm}
+\label{fig:welfare}
+%\includegraphics[width=.9\textwidth]{images/income_change_sec.pdf}
+\includegraphics[width=.9\textwidth]{images/fig5.eps}
+\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: Figures show the simulated real consumption changes of the various disintegration scenarios as \% of the level in the baseline year 2014.}}
+\end{fignote}
+%{\footnotesize{\textbf{Note}: ** Old EU member states, * New EU member states.}}
+\end{figure}%
+
+
+
+\renewcommand{\tabcolsep}{.5cm}
+
+\begin{table}[t!]
+\centering
+\caption{Changes in Real Consumption in \%, Baseline Year 2014}
+\vspace{0.25cm}
+
+\resizebox{1\textwidth}{!}{
+\begin{tabular}{lccccccc}
+\toprule						
+Scenario:  &	{Customs}	&	{Single}	&	{Euro}	&	{Schengen}	&	{Other}	&	{All}	&	{All}	 \\
+           & 	{Union}	&	{Market}     & 			& 				& 	{RTAs}	& 			& {w\ Transfers}			\\
+\midrule
+& (S1) & (S2)& (S3)& (S4)& (S5)& (S6)& (S7)\\
+\midrule
+\input{tables/real_inc.tex}
+\bottomrule
+\multicolumn{8}{l}{\parbox[t]{7.8in}{\footnotesize{\textbf{Note}: Table shows average effects by country obtained from 1,000 simulations based on bootstrapped parameter estimates.  $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level according to bootstrapped distribution of simulated effects. $^o$ Old EU member states, $^n$ New EU member states.}}}
+\end {tabular}
+\label{table_welfare}
+}
+\end{table}
+
+
+
+\begin{figure}[h!]
+\centering
+\caption{Additional Real Consumption Effects of Transfer Cuts}
+\vspace{0.25cm}
+
+\label{fig:transfers}
+%\includegraphics[width=1\textwidth]{images/transfer_effects.pdf}
+\includegraphics[width=1\textwidth]{images/fig6.eps}
+\begin{fignote}{1\textwidth}{\scriptsize{\textbf{Note}: The figure shows transfer cuts by EU member state implemented in S7 and difference in real consumption growth (in pp) between the EU collapse scenarios with and without transfers.}}\end{fignote}
+\end{figure}%
+
+
+
+
+\begin{figure}[t!]
+\caption{Real Consumption Losses in the EU: The Roles of Size, Initial Income, Remoteness, and Openness}
+\vspace{0.25cm}
+\label{fig:collector}
+\centering
+%\includegraphics[width=\textwidth]{images/combined.pdf}
+\includegraphics[width=\textwidth]{images/fig7.pdf}
+\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: The figure plots correlations between the simulated losses of a complete breakdown of European integration including the end of fiscal transfers (in \% of baseline real  expenditure) and various characteristics of the EU member states. The size of the population (in logs) as of 1995, income per capita in thousand US dollars (in logs) as of 1995, average distance (in km) to all other EU member states (in logs), and trade openness (exports relative to GDP, in \%) in 1995. Size of circles denotes population size. Solid lines represent fitted population-weighted linear regressions; dashed lines represent fits of unweighted regressions. All slopes are statistically different from zero (at least at the 5\%-level) except for regressions on log average distance (lower left diagram).}}
+\end{fignote}
+\end{figure}
+
+
+\begin{figure}[t!]
+\centering
+\caption{Comparison of Sectoral Changes in NTBs for the Full Collapse scenario (S6), in \%}
+\vspace{0.25cm}
+\label{fig:comparison_SingleMarket}
+%\includegraphics[width=0.67\textwidth]{images/ntb_allEU_bt_both.pdf}
+\includegraphics[width=0.67\textwidth]{images/fig8.eps}
+\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: The Figure compares the average increase in trade costs (ad-valorem tariff equivalents) by sector that would result from undoing all steps of the EU integration obtained from our baseline estimation (Table \ref{table_sector} and \ref{table_dispersion}) and obtained from an estimation including bilateral trends (Table \ref{table_sector_trend} and \ref{table_dispersion_trend}.). Bootstrapped 90\% confidence intervals.}}
+\end{fignote}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\caption{Real Consumption Changes: Simple vs. Complex Models}
+\vspace{0.25cm}
+\label{fig:fourway}
+%\includegraphics[width=1\textwidth]{images/fourways.pdf}\\
+\includegraphics[width=1\textwidth]{images/fig9.eps}\\
+\begin{fignote}{\textwidth}{\scriptsize{\textbf{Note}: The figure shows the real consumption effects (in \%) in the full collapse scenario generated by models (a)-(d). Dots and confidence bounds refer to $\hat W^{(b)}-\hat W^{(a)}$ in panel (b), to $\hat W^{(c)}-\hat W^{(a)}$ in panel (c), and to $\hat W^{(d)}-\hat W^{(c)}$ in panel (d), and differences are measured in pp. Countries are ordered along the x-axis by decreasing magnitude of the real consumption effects in our main model (d).}}
+\end{fignote}
+\end{figure}
+
+
+
+
+
+\renewcommand{\tabcolsep}{.7cm}
+
+\begin{table}[h!]\vspace*{-0cm}
+\centering
+	\caption{Changes in Sectoral Value Added: Simple IO, Scenario: All (S6)}\label{table_outputs_gfake}
+	\vspace{0.25cm}
+{\footnotesize
+\begin{tabular}{lccc}
+\toprule
+% & & \multicolumn{2}{c}{Scenario: All (S6)}\\
+%\midrule
+&& \multicolumn{1}{c}{Value added change} &\multicolumn{1}{c}{Change in value added share}\\
+Region & Sector & (in \%) & (in pp) \\
+\midrule
+\input{tables/outputp_s_gfake.tex}
+\bottomrule
+\multicolumn{4}{l}{\parbox[t]{6in}{\scriptsize{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications. Bold-faced changes are statistically significantly different at the 1\%-level from their counterparts in Table \ref{table_outputs}.}}}
+\end{tabular}
+}
+\end{table}
+
+
+
+
+\newpage
+
+%\bibliography{literature_aea}
+%\bibliographystyle{aernobold}
+%\nocite{*}
+
+
+\clearpage
+\begin{appendix}
+\renewcommand*{\thesection}{\Alph{section}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\section{Appendix}\label{apx:info}
+
+
+
+\renewcommand{\tabcolsep}{.5cm}
+
+\renewcommand{\arraystretch}{1.1}
+
+\begin{table}[h]
+\caption{The Impact of EU Integration on Bilateral Imports (2000 - 2014)}\label{table_basic}
+\centering
+\scriptsize{
+\begin{tabular}{lcccc}
+Dep. var.: & \multicolumn{4}{l}{Bilateral Imports}\\
+\toprule						
+\input{tables/Tab_basic}
+\bottomrule
+\multicolumn{5}{l}{\parbox[t]{5.8in}{\scriptsize{\textbf{Note}: ***, **, * denote significance at the 1\%, 5\%, 10\% levels, respectively. All models estimated using Poisson Pseudo Maximum Likelihood (PPML) methods. Robust standard errors (in parentheses) allow for clustering at the country-pair level. All regressions include country-pair, importer-year and exporter-year fixed effects. Number of observations: 27,735.}}}
+\end {tabular}}
+\end{table} 
+
+
+
+
+\renewcommand{\tabcolsep}{.5cm}
+
+\begin{table}[t]
+\caption{Dispersion parameter $1/\theta$}
+\label{table_dispersion}
+\centering \vspace*{0.6cm}
+{\scriptsize
+\begin{tabular}{lcccccc}
+Dep. var.: Bilateral imports\\
+\toprule
+Sector description & Sector & $-1/\theta$ & 90\% c.i. & At constraint \\
+\midrule
+\input{tables/theta_org_adj_constraint}
+\bottomrule
+\multicolumn{5}{l}{\parbox[t]{5.9in}{\textbf{Note.} Coefficient averages and 90\% confidence bounds from 1000 bootstraps of the sectoral gravity equation, estimated under the constraint that $1/\theta_j\geq 0$ with a Poisson Pseudo Maximum Likelihood (PPML) estimator.  Last column shows the share of draws were the constraint is binding. We bootstrapped clusters (country pairs) rather than observations to account for correlation of errors within pairs. Estimate for the services sector trade elasticity is triangulated using results in \cite{egger2012trade} and Table \ref{table_basic}. }}
+\end{tabular}}
+\end{table}
+
+
+
+\renewcommand{\tabcolsep}{.2cm}
+
+
+
+\begin{table}[h]
+\caption{EU Integration Steps and Bilateral Imports (2000 - 2014): with trends}
+\label{table_sector_trend}\centering \vspace*{0.5cm}
+{\scriptsize
+\hspace*{-1cm}\begin{tabular}{lcccccccc}
+Dep. var.: Bilateral imports\\
+\toprule
+Sector description & Sector & Single Market & Euro & Schengen & EU-KOR PTA & EU PTAs & Other RTAs \\
+\midrule
+\input{tables/coef_trend_final_adj}
+\bottomrule
+\multicolumn{8}{l}{\parbox[t]{6.5in}{Coefficient averages from 1000 bootstraps of the sectoral gravity equation including bilateral time trends in addition to the fixed importer-time, exporter-time, and pair fixed effects, and estimated under the constraint that $1/\theta_j\geq 0$ with a Poisson Pseudo Maximum Likelihood (PPML) estimator.  ***, **, * denote significance at the 1\%, 5\%, 10\% level, respectively, according to the bootstrapped distribution of the coefficients. We bootstrapped clusters (country pairs) rather than observations to account for correlation of errors within pairs. }}
+\end{tabular}
+}
+\end{table}
+
+\renewcommand{\tabcolsep}{.6cm}
+
+\begin{table}[t]
+\caption{Dispersion parameter $1/\theta$ -- with trends}
+\label{table_dispersion_trend}\centering \vspace*{0.5cm}
+{\scriptsize
+\begin{tabular}{lcccccc}
+Dep. var.: Bilateral imports\\
+\toprule
+Sector description & Sector & $-1/\theta$ & 90\% c.i. & At constraint\\
+\midrule
+\input{tables/theta_trend_org_adj_constraint}
+\bottomrule
+\multicolumn{5}{l}{\parbox[t]{5.9in}{\textbf{Note.} Coefficient averages and 90\% confidence bounds from 1000 bootstraps of the sectoral gravity equation including bilateral time trends in addition to the fixed importer-time, exporter-time, and pair fixed effects, and estimated under the constraint that $1/\theta_j\geq 0$ with a Poisson Pseudo Maximum Likelihood (PPML) estimator. Last column shows the share of draws were the constraint is binding. We bootstrapped clusters (country pairs) rather than observations to account for correlation of errors within pairs. $^\dagger$ Estimate for the services sector trade elasticity is triangulated using results in \cite{egger2012trade} and Table \ref{table_basic}. }}
+\end{tabular}}
+\end{table}
+
+\renewcommand{\tabcolsep}{.2cm}
+
+
+\begin{table}[t]
+\caption{Aggregate Elasticities: Weighted Averages of Sectoral Estimates}
+\label{table_wagg}\centering \vspace*{0.5cm}
+{\scriptsize
+\hspace*{-2cm}\begin{tabular}{lcccccc}
+\multicolumn{4}{l}{Dep. var.: Bilateral imports}\\
+\toprule
+Sector description & Single Market & Euro & Schengen & Other RTA & EU-KOR PTA &  $-1/\theta$\\
+\midrule
+\input{tables/wagg}
+\bottomrule
+\multicolumn{7}{l}{\parbox[t]{5.3in}{Coefficient averages and 90\% confidence bounds from 1000 bootstraps of the sectoral gravity equation including bilateral time trends in addition to importer-time, exporter-time, and pair fixed effects, and estimated under the constraint that $1/\theta_j\geq 0$ with a Poisson Pseudo Maximum Likelihood (PPML) estimator. Last column shows the share of draws were the constraint is binding. We bootstrapped clusters (country pairs) rather than observations to account for correlation of errors within pairs. $^\dagger$ Estimate for the services sector trade elasticity is triangulated using results in \cite{egger2012trade} and Table \ref{table_basic}. }}
+\end{tabular}}
+\end{table}
+
+
+
+\renewcommand{\tabcolsep}{.5cm}
+
+
+
+%\renewcommand{\arraystretch}{1}
+\begin{table}[htp!]\vspace*{-0cm}
+ \centering
+	\caption{Gross and Value Added Trade in Baseline Year 2014 (in bn. USD)}\label{table_aggexp_base}
+	\footnotesize
+\hspace*{-0cm}\begin{tabular}{lccccc}
+\toprule
+& & Domestic & \multicolumn{3}{c}{Exports to}\\
+ Region & Output & Sales & old EU &  new EU & non-EU\\
+\midrule\\[-.5EM]
+\input{tables/aggexp_base_s}\\[-.75EM]
+\midrule\\[.25EM]
+& & Domestic & \multicolumn{3}{c}{Value Added Exports to}\\
+Region & Value added & absorption & old EU &  new EU & non-EU\\
+\midrule\\[-.0EM]
+\input{tables/aggVAexp_base_s}\\[-1EM]
+\bottomrule
+\multicolumn{6}{l}{\parbox[t]{5.7in}{\scriptsize{\textbf{Note}:  Domestic sales (absorption) sums all group members' domestic consumption and does not include sales (VA exports) to other members of the same group. The difference between output (VA) and the sum of domestic sales (absorption) and (VA) exports is due to changes in the inventory stock.}}}
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+\begin{table}[htp!]\vspace*{-0cm}
+  \centering
+	\caption{Trade Flows and VAX-Ratios in the Baseline Year 2014}\label{table_secbilexp}
+\resizebox{.8\textwidth}{!}{
+\begin{tabular}{lccccc}
+\toprule
+\multicolumn{2}{l}{Exports to:} & \multicolumn{2}{c}{EU}& \multicolumn{2}{c}{non-EU}\\
+ &   &  gross & VAX & gross  & VAX  \\
+Region &  Sector & (bn. USD) & (in \%) & (bn. USD)  &  (in \%) \\
+\midrule\\[-.5EM]
+\input{tables/secbilexp_base_s}\\[-1EM]
+\bottomrule
+%\end{tabular}%\vspace*{-.1cm}
+\multicolumn{6}{l}{\parbox[t]{5.7in}{\footnotesize{\textbf{Note}:  Source: WIOD and own calculations.}}}
+\end{tabular}
+}
+\end{table}
+
+
+
+
+\renewcommand{\tabcolsep}{.2cm}
+
+\begin{table}[h!]
+\caption{Changes in Real Consumption in \%; Brexit and other Robustness}
+\centering
+{\scriptsize
+\begin{tabular}{lccccccccc}
+\toprule						
+Robustness: & \multicolumn{4}{c}{Brexit}&\multicolumn{1}{c}{Trends}   &\multicolumn{2}{c}{Trade imbalances} \\
+ &	{Brexit} &	{All EU}	&	{All EU}	&	{Difference} &	{All EU}	&	{All EU} &	{All EU} \\
+&	&    post-Brexit & pre-Brexit	& post-pre-Brexit &  & constant  & balanced  \\
+& & & (baseline)\\
+\cmidrule(rl){2-5}\cmidrule(rl){6-6}\cmidrule(rl){7-8}
+& (1) & (2) & (3) & (4) & (5) &(6) &(7) \\
+\midrule
+\input{tables/real_inc_rob_new}
+\bottomrule
+\multicolumn{8}{l}{\parbox[t]{5.75in}{\scriptsize{\textbf{Note}: Table shows average effects by country obtained from 1000 simulations based on bootstrapped parameter estimates.  $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level according to the bootstrapped distribution of simulated effects. $^o$ Old EU member states, $^n$ New EU member states. Col. 1: Brexit; Col. 2: full collapse scenario from simulated baseline after Brexit; Col. 3: baseline full collapse scenario (S6); Col. 4: Difference between Cols. 2 and 3; Col. 5: Based on gravity estimations with bilateral time trends; Col 6: trade deficits held constant in nominal terms; Col. 7: scenario starting from simulated baseline with balanced trade.}}}
+\end {tabular}}
+\label{table_welfare_rob}
+
+\end{table}
+
+\clearpage
+
+
+
+
+\section{Online Appendix}
+\setcounter{table}{0}
+\renewcommand{\thetable}{B\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{B\arabic{figure}}
+
+
+
+\newpage
+\subsection{Additional Tables}
+
+
+\begin{table}[h!]\vspace*{-0cm}
+	\caption{List of Sectors}\label{table_sectorlist}
+	  \centering{\scriptsize
+\hspace*{-0cm}\begin{tabular}{cll}
+\toprule
+Sector ID& Sectorname  & ISIC Rev. 4\\
+\midrule
+1&Crops \& Animals&A01\\
+2&Forestry \& Logging&A02\\
+3&Fishing \& Aquaculture&A03\\
+4&Mining \& Quarrying&B\\
+5&Food, Beverages \& Tobacco&C10-C12\\
+6&Textiles, Apparel,Leather&C13-C15\\
+7&Wood \& Cork&C16\\
+8&Paper&C17\\
+9&Recorded Media Reproduction&C18\\
+10&Coke, Refined Petroleum&C19\\
+11&Chemicals&C20\\
+12&Pharmaceuticals&C21\\
+13&Rubber \& Plastics&C22\\
+14&Other non-Metallic Mineral&C23\\
+15&Basic Metals&C24\\
+16&Fabricated Metal&C25\\
+17&Electronics \& Optical Products&C26\\
+18&Electrical Equipment&C27\\
+19&Machinery \& Equipment&C28,C33\\
+20&Motor Vehicles&C29\\
+21&Other Transport Equipment&C30\\
+22&Furniture \& Other Manufacturing&C31\_C32\\
+23&Electricity \& Gas&D35\\
+24&Water Supply&E36\\
+25&Sewerage \& Waste&E37-E39\\
+26&Construction&F\\
+27&Trade \& Repair of Motor Vehicles&G45\\
+28&Wholesale Trade&G46\\
+29&Retail Trade&G47\\
+30&Land Transport&H49\\
+31&Water Transport&H50\\
+32&Air Transport&H51\\
+33&Aux. Transportation Services&H52\\
+34&Postal and Courier&H53\\
+35&Accommodation and Food&I\\
+36&Publishing&J58\\
+37&Media Services&J59\_J60\\
+38&Telecommunications&J61\\
+39&Computer \& Information Services&J62\_J63\\
+40&Financial Services&K64\\
+41&Insurance&K65\_K66\\
+42&Real Estate &L68\\
+43&Legal and Accounting&M69\_M70\\
+44&Business Services&M71,M73-M75\\
+45&Research and Development&M72\\
+46&Admin. \& Support Services&N\\
+47&Public \& Social Services&O84\\
+48&Education&P85\\
+49&Human Health and Social Work&Q\\
+50&Other Services, Households&R-U\\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+
+\begin{table}[htp!]
+\caption{Membership Accessions EU, Euro, Schengen 2000 - 2014 (WIOD Country Sample)}
+\centering
+\resizebox{.7\textwidth}{!}{
+\begin{tabular}{l l l l l l}
+\toprule
+\multicolumn{2}{l}{EU}			&	\multicolumn{2}{l}{Euro}			&	\multicolumn{2}{l}{Schengen}			\\
+Country	&	Accession	&Country	&	Accession	& Country	&	Accession	\\\cmidrule(rl){1-2}\cmidrule(rl){3-4}\cmidrule(rl){5-6}
+CZE	&	2004	&	GRC	&	2001	&	DNK	&	2001	\\
+CYP	&	2004	&	SVN	&	2007	&	FIN	&	2001	\\
+EST	&	2004	&	CYP	&	2007	&	ISL	&	2001	\\
+HUN	&	2004	&	MLT	&	2008	&	NOR	&	2001	\\
+LTU	&	2004	&	SVK	&	2009	&	SWE	&	2001	\\
+LVA	&	2004	&	EST	&	2011	&	CZE	&	2007	\\
+MLT	&	2004	&	LVA	&	2014	&	EST	&	2007	\\
+POL	&	2004	&		&		&	HUN	&	2007	\\
+SVK	&	2004	&		&		&	LTU	&	2007	\\
+SVN	&	2004	&		&		&	LVA	&	2007	\\
+BGR	&	2007	&		&		&	MLT	&	2007	\\
+ROU	&	2007	&		&		&	POL	&	2007	\\
+HRV	&	2013	&		&		&	SVK	&	2007	\\
+	&		&		&		&	SVN	&	2007	\\
+	&		&		&		&	CHE	&	2008	\\
+\bottomrule
+\multicolumn{6}{l}{\parbox[t]{4in}{\footnotesize{\textbf{Source}: European Commission.}}}
+\end {tabular}
+\label{membership_table}
+}
+\end{table}
+
+
+\begin{table}[htp!]
+\caption{Comparison of Schengen Borders (WIOD Country Sample, Geographical Europe), 2000 and 2014}
+\centering
+\resizebox{.9\textwidth}{!}{
+\begin{tabular}{l c c c c c}
+\toprule
+{Country}	&	{Total Number}	&	{$\#$ of Schengen}	&	{$\#$ of Schengen}	&	{Share of Schengen to}	&	{Share of Schengen to}	\\
+	&	{of Borders}	&	{Borders 2000}	&	{Borders 2014}	&	{Total Borders 2000}	&	{to Total Borders 2014}	\\
+	\midrule
+AUT	&	85	&	29	&	67	&	34.1	&	78.8	\\
+BEL	&	106	&	56	&	88	&	52.8	&	83.0	\\
+BGR	&	138	&	17	&	68	&	12.3	&	49.3	\\
+CHE	&	87	&	10	&	69	&	11.5	&	79.3	\\
+CYP	&	180	&	22	&	56	&	12.2	&	31.1	\\
+CZE	&	87	&	15	&	69	&	17.2	&	79.3	\\
+DEU	&	72	&	24	&	54	&	33.3	&	75.0	\\
+DNK	&	95	&	23	&	77	&	24.2	&	81.1	\\
+ESP	&	107	&	59	&	89	&	55.1	&	83.2	\\
+EST	&	147	&	18	&	129	&	12.2	&	87.8	\\
+FIN	&	151	&	18	&	132	&	11.9	&	87.4	\\
+FRA	&	80	&	32	&	62	&	40.0	&	77.5	\\
+GBR	&	126	&	49	&	80	&	38.9	&	63.5	\\
+GRC	&	141	&	23	&	67	&	16.3	&	47.5	\\
+HRV	&	112	&	18	&	69	&	16.1	&	61.6	\\
+HUN	&	95	&	19	&	77	&	20.0	&	81.1	\\
+IRL	&	155	&	51	&	81	&	32.9	&	52.3	\\
+ITA	&	86	&	36	&	74	&	41.9	&	86.0	\\
+LTU	&	106	&	16	&	88	&	15.1	&	83.0	\\
+LUX	&	95	&	47	&	78	&	49.5	&	82.1	\\
+LVA	&	125	&	16	&	107	&	12.8	&	85.6	\\
+MLT	&	113	&	36	&	101	&	31.9	&	89.4	\\
+NLD	&	100	&	51	&	82	&	51.0	&	82.0	\\
+NOR	&	118	&	23	&	101	&	19.5	&	85.6	\\
+POL	&	88	&	16	&	69	&	18.2	&	78.4	\\
+PRT	&	136	&	88	&	118	&	64.7	&	86.8	\\
+RUS	&	118	&	16	&	49	&	13.6	&	41.5	\\
+SVK	&	92	&	24	&	74	&	26.1	&	80.4	\\
+SVN	&	98	&	20	&	76	&	20.4	&	77.6	\\
+SWE	&	114	&	23	&	96	&	20.2	&	84.2	\\
+TUR	&	155	&	21	&	65	&	13.5	&	41.9	\\
+\bottomrule
+\multicolumn{6}{l}{\parbox[t]{7.5in}{\footnotesize{\textbf{Note}: Schengen borders counted considering the shortest travel and road distance, also considering ferry connections. Total number of borders counts number of potentially treated borders in geographical Europe. Intercontinental borders are considered to be zero.}}}
+\end {tabular}
+\label{schengen_table}
+}
+\end{table}
+
+\begin{table}[htp!]
+\caption{RTAs: 2000 - 2014 (within WIOD Country Sample)}
+\centering
+\resizebox{.9\textwidth}{!}{
+\begin{tabular}{c c c l}
+\toprule
+\multicolumn{2}{l}{Country codes} &	year	& Treaty\\
+CHE	&MEX	& 2001	& EFTA - Mexico\\
+EST	&HUN	&2001	& Pre-EU Accession Treaties\\
+MEX	&NOR	&2001	&EFTA - Mexico\\
+BGR&	LTU	&2002	&Pre-EU Accession Treaties\\
+CHE&	HRV	&2002	&EFTA-Croatia (Pre-EU Accession) until 2012\\
+CHN	&IND	&2002	&Asia Pacific Trade Agreement (APTA) - Accession of China\\
+CHN	&KOR	&2002	&Asia Pacific Trade Agreement (APTA) - Accession of China\\
+EST	&BGR	&2002	&Pre-EU Accession Treaties\\
+HRV	&EU	&2002	&Pre-EU Accession Treaties\\
+HRV	&NOR	&2002	&EFTA-Croatia (Pre-EU Accession) until 2012\\
+BGR	&HRV	&2003	&Pre-EU Accession Treaties\\
+CHN	&IDN	&2003	&ASEAN - China\\
+CZE	&HRV	&2003	&Pre-EU Accession Treaties\\
+HRV	&POL	&2003	&Pre-EU Accession Treaties\\
+HRV	&ROU	&2003	&Pre-EU Accession Treaties\\
+HRV	&SVK	&2003	&Pre-EU Accession Treaties\\
+HRV	&TUR	&2003	&Croatia - Turkey (Pre-EU Accession)\\
+HUN	&HRV	&2003	&Pre-EU Accession Treaties\\
+LVA	&BGR	&2003	&Pre-EU Accession Treaties\\
+AUS	&USA	&2005	&United States - Australia\\
+MEX	&JPN	&2005	&Japan - Mexico\\
+KOR	&CHE	&2006	&EFTA - Korea, Republic of\\
+NOR	&KOR	&2006	&EFTA - Korea, Republic of\\
+IDN	&JPN	&2008	&Japan - Indonesia\\
+CAN	&NOR	&2009	&EFTA - Canada\\
+CHE	&CAN	&2009	&EFTA - Canada\\
+CHE	&JPN	&2009	&Japan - Switzerland\\
+IDN	&AUS	&2010	&ASEAN - Australia\\
+IND	&JPN	&2011	&India - Japan\\
+KOR	&EU		&2011	&EU - Korea, Republic of\\
+KOR	&USA	&2012	&Korea, Republic of - United States\\
+CHE	&CHN	&2014	&Switzerland - China\\
+KOR	&AUS	&2014	&Korea, Republic of - Australia\\
+\bottomrule
+\end {tabular}
+\label{rta_table}
+}
+\end{table}
+
+\begin{table}[htp!]
+\caption{Operating Budgetary Balance, Million Euro, 2010-2014}
+\centering
+\resizebox{.35\textwidth}{!}{
+\begin{tabular}{l r}
+\toprule
+Country	&	{Transfer}	\\
+\midrule
+ AUT 	 & 	-1009.5	\\
+ BEL 	 & 	-1469.8	\\
+ BGR 	 & 	+1260.8	\\
+ CYP 	 & 	+29.5	\\
+ CZE 	 & 	+2597.0	\\
+ DEU 	 & 	-11901.2	\\
+ DNK 	 & 	-938.2	\\
+ ESP 	 & 	+3048.8	\\
+ EST 	 & 	+610.7	\\
+ FIN 	 & 	-604.8	\\
+ FRA 	 & 	-7169.7	\\
+ GBR 	 & 	-6425.8	\\
+ GRC 	 & 	+4653.6	\\
+ HRV 	 & 	+104.6	\\
+ HUN 	 & 	+4216.7	\\
+ IRL 	 & 	+435.3	\\
+ ITA 	 & 	-4756.4	\\
+ LTU 	 & 	+1459.6	\\
+ LUX 	 & 	-37.1	\\
+ LVA 	 & 	+792.5	\\
+ MLT 	 & 	+91.8	\\
+ NLD 	 & 	-2759.5	\\
+ POL 	 & 	+11477.0	\\
+ PRT 	 & 	+3652.3	\\
+ ROU 	 & 	+2678.2	\\
+ SVK 	 & 	+1281.0	\\
+ SVN 	 & 	+542.0	\\
+ SWE 	 & 	-1799.1	\\
+\bottomrule
+\multicolumn{2}{l}{\parbox[t]{2in}{\footnotesize{\textbf{Source}: European Commission.}}}
+\end {tabular}
+\label{transfer_table}
+}
+\end{table}
+
+
+\renewcommand{\tabcolsep}{.5cm}
+
+
+
+\begin{table}[htp!]\vspace*{-0cm}
+	\caption{Changes in Domestic Sales, Gross Trade Flows and VAX-ratios}\label{apxtable_aggexpvax}
+\centering
+\resizebox{.75\textwidth}{!}{\scriptsize
+\begin{tabular}{lcccc}
+\toprule
+\quad   &\multicolumn{2}{c}{\bf Domestic Sales}&\multicolumn{2}{c}{\bf Total Exports}\\
+ &gross& VAX &gross& VAX  \\
+ & (in \%)& (in pp) & (in \%)& (in pp) \\
+\midrule\\[-.75EM]
+\multicolumn{5}{l}{\textit{\textbf{S1 Customs Union (MFN tariffs)}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxCunion.tex}\\[-.75EM]
+\multicolumn{5}{l}{\textit{\textbf{S2 Single Market}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxSmarket.tex}\\[-.75EM]
+\multicolumn{5}{l}{\textbf{\textit{S3 Euro}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxEuro.tex}\\[-.75EM]
+\multicolumn{5}{l}{\textit{\textbf{S4 Schengen}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxSchengen.tex}\\[-.75EM]
+\multicolumn{5}{l}{\textit{\textbf{S5 RTAs}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxoRTA.tex}\\[-.75EM]
+\multicolumn{5}{l}{\textit{\textbf{S6 All}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxallEU.tex}\\[-.75EM]
+\multicolumn{5}{l}{\textit{\textbf{S7 All w Transfers}}}\\[-.4EM]
+\midrule
+\input{tables/agg_apxallEUtransfer.tex}\\[-.75EM]
+\bottomrule
+\multicolumn{5}{l}{\parbox[t]{4in}{\scriptsize{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications. VAX means domestic value added content of exports. New EU members are the 13 mostly Eastern European countries who joined after 2003.}}}
+\end{tabular}
+}
+\end{table}
+
+
+
+
+\begin{table}[htp!]\vspace*{-0cm}
+ \centering
+	\caption{Changes in Sectoral Trade Flows and VAX-ratios }\label{apxtable_secbilvax}
+\resizebox{.7\textwidth}{!}{
+\begin{tabular}{lccccccc}
+\toprule
+\multicolumn{2}{l}{Exports to:} & \multicolumn{2}{c}{EU}& \multicolumn{2}{c}{non-EU}& \multicolumn{2}{c}{World}\\
+ \textit{\textbf{Scenario}} &   &  gross & VAX & gross  & VAX & gross  & VAX   \\
+\quad Region & Sector & (in\%)&(in pp)& (in\%)&(in pp)& (in\%)&(in pp)\\
+\midrule\\[-.45EM]
+\multicolumn{8}{l}{\textbf{\textit{S1 Customs Union (MFN tariffs)}}}\\
+\midrule
+\input{tables/aggsecexpCunion.tex}\\[-.5EM]
+\multicolumn{8}{l}{\textbf{\textit{S2 Single Market}}}\\
+\midrule%\\[.25EM]
+\input{tables/aggsecexpSmarket.tex}\\[-.5EM]
+\multicolumn{8}{l}{\textbf{\textit{S3 Euro}}}\\
+\midrule%\\[.25EM]
+\input{tables/aggsecexpEuro.tex}\\[-.5EM]
+\multicolumn{8}{l}{\textit{\textbf{S4 Schengen}}}\\
+\midrule
+\input{tables/aggsecexpSchengen.tex}\\[-.5EM]
+\multicolumn{8}{l}{\textbf{\textit{S5 RTAs}}}\\
+\midrule%\\[.25EM]
+\input{tables/aggsecexpoRTA.tex}\\[-.5EM]
+
+\multicolumn{8}{l}{\textit{\textbf{S6 All}}}\\
+\midrule
+\input{tables/aggsecexpallEU.tex}\\[-.5EM]
+\multicolumn{8}{l}{\textit{\textbf{S7 All w/ Transfers}}}\\
+\midrule
+\input{tables/aggsecexpallEUtransfer.tex}\\[-.5EM]
+\bottomrule
+\multicolumn{8}{l}{\parbox[t]{6in}{\scriptsize{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%, 5\%, 10\%-level based on 1,000 bootstrap replications.}}}
+\end{tabular}
+}
+\end{table}
+
+
+
+\begin{table}[htp]\vspace*{-1cm}
+ \centering
+	\caption{Changes in Value Added for EU28, Goods (in \%)}\label{table_VAeu28_goods}
+	\footnotesize
+	\resizebox{\textwidth}{!}{
+\hspace*{-0cm}\begin{tabular}{lccccccccc}
+\toprule
+Sector & Sector & Sector  &	{Single}	&	{Customs}	&	{Euro}	&	{Schengen}	&	{Other}	&	{All}	&	{All}	 \\
+Description & ISIC &          & 	{Market}	&	{Union}     & 			& 				& 	{RTAs}	& 			& {w Transfers}			\\
+\midrule
+\input{tables/hvasec1.tex}
+\bottomrule
+\multicolumn{10}{l}{\parbox[t]{9in}{\scriptsize{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications.  Given changes in value added for EU28 are weighted averages.}}}
+\end{tabular}}
+\end{table}
+
+\begin{table}[p]\vspace*{-0cm}
+ \centering
+	\caption{Changes in Value Added for EU28, Services (in \%)}\label{table_VAeu28_services}
+	\footnotesize
+	\resizebox{\textwidth}{!}{
+\hspace*{-0cm}\begin{tabular}{lccccccccc}
+\toprule
+Sector & Sector & Sector  &	{Single}	&	{Customs}	&	{Euro}	&	{Schengen}	&	{Other}	&	{All}	&	{All}	 \\
+Description &ISIC  &          & 	{Market}	&	{Union}     & 			& 				& 	{RTAs}	& 			& {w Transfers}			\\
+\midrule
+\input{tables/hvasec2.tex}
+\bottomrule
+\multicolumn{10}{l}{\parbox[t]{9in}{\scriptsize{\textbf{Note}: $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level based on 1,000 bootstrap replications. Given changes in value added for EU28 are weighted averages.}}}
+\end{tabular}}
+\end{table}
+
+
+
+
+\newpage
+\clearpage
+\begin{landscape}
+\begin{figure}[h!]
+\centering
+\caption{Percentage Change in Real Consumption relative to Status Quo, Various Scenarios}
+\label{fig:income_change_sen}
+\includegraphics[width=\textwidth]{images/figB1.eps}
+%\includegraphics[width=\textwidth]{images/scenarios_rank.pdf}
+\begin{fignote}{1\textwidth}{\scriptsize{\textbf{Note}: The figure depicts percentage changes in real consumption relative to the baseline year 2014. The dashed lines are the 90\% confidence bounds based on 1,000 bootstrap replications.}}\end{fignote}
+\end{figure}
+\end{landscape}
+
+
+
+
+\renewcommand{\tabcolsep}{.1cm}
+
+\begin{table}[h!]
+\caption{Changes in Real Consumption in S6; Alternative Models}
+\centering
+{\scriptsize
+\begin{tabular}{lccccccccccccc}
+\toprule						
+Robustness: & \multicolumn{8}{c}{Alternative Models}  &\multicolumn{2}{c}{Aggregate Estimation} \\
+\cmidrule(rl){2-9}\cmidrule(rl){10-11}
+& \multicolumn{4}{c}{$\hat W$} &\multicolumn{4}{c}{Difference}   & $\hat W$ & Difference$^\dagger$\\
+\cmidrule(rl){2-5}\cmidrule(rl){6-9}\cmidrule(rl){10-10}\cmidrule(rl){11-11}
+\# sectors & 3 & 3 & 50 & 50 & &  &&  & 3 & 3\\
+IO structure & simple & complex & simple & complex & &  & & & complex & complex\\
+%\cmidrule(rl){2-5}\cmidrule(rl){6-6}\cmidrule(rl){7-8}
+& (a) & (b) & (c) & (d) & (b)-(a) &(c)-(a) &(d)-(c) &(d)-(a)  & (f) & (f)-(a)\\
+\midrule
+\input{tables/rob_models}
+\bottomrule
+\multicolumn{11}{l}{\parbox[t]{6in}{\scriptsize{\textbf{Note}: Table shows average effects by country obtained from 1000 simulations based on bootstrapped parameter estimates.  $^{***}$,$^{**}$,$^{*}$ denote statistical significance at the 1\%,5\%,10\%-level according to the bootstrapped distribution of simulated effects. $^o$ Old EU member states, $^n$ New EU member states. Real consumption effects $\hat W$ in \%, differences in pp. $^\dagger$ Significance levels cannot be computed because model $(f)$ and $(a)$ are not based on the same set of estimates.}}}
+\end {tabular}}
+\label{table_rob_models}
+
+\end{table}
+
+
+
+\end{appendix}
+
+
+
+\end{document}
